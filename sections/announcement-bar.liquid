@@ -69,7 +69,6 @@
 
 </style>
 
-<body>
   {% assign page = pages['your-page-handle'] %}
 
   {% if page.metafields.global.announcement_list %}
@@ -96,7 +95,7 @@
       </svg>
     </div>
   </div>
-</body></html><script>
+<script>
     let slideItems = document.querySelectorAll(".swiper-slide");
     let nextArrow = document.querySelector(".swiper-button-next");
     let prevArrow = document.querySelector(".swiper-button-prev");
@@ -150,7 +149,8 @@
 
     autoScroll();
 
-</script>{% schema %}
+</script>
+{% schema %}
 {
   "name": "t:sections.announcement-bar.name",
   "max_blocks": 12,
