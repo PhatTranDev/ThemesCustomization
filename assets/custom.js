@@ -13,10 +13,7 @@ class Custom extends HTMLElement {
 
         this.increaseButton = this.querySelector('.increase-button');
         this.decreaseButton = this.querySelector('.decrease-button');
-        
-        this.increase();
-        this.decrease();
-        
+
         console.log(index);
     }
 
@@ -34,6 +31,7 @@ class Custom extends HTMLElement {
             console.log("Decrease ",this.index);
         });
     }
+
 }
 
 customElements.define('custom-button', Custom);
