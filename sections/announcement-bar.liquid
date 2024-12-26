@@ -2,155 +2,160 @@
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
 
 {% comment %} <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      .swiper {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: yellow;
-        padding: 16px 32px;
-      }
-
-      .swiper-container {
-        order: 2;
-        overflow: hidden;
-        height: 50px;
-      }
-
-      .swiper-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: 100%;
-        transition: transform 0.5s ease-in-out;
-      }
-
-      .swiper-button-next {
-        order: 3;
-      }
-
-      .swiper-button-prev {
-        order: 1;
-      }
-
-      .swiper-slide {
-        padding: 16px;
-        font-size: 14px;
-        font-weight: bold;
-        opacity: 0;
-        transition: opacity 1s ease-in-out;
-      }
-
-      .swiper-button-prev,
-      .swiper-button-next {
-        width: 16px;
-        height: 16px;
-        cursor: pointer;
-      }
-
-      .active {
-        opacity: 1;
-      }
-
-      @media screen and (min-width: 1440px) {
-        .swiper {
-          padding: 8px 128px;
-        }
-
-        .swiper-slide {
-          font-size: 20px;
-        }
-      }
-
-    </style>
-
-      {% assign page = pages['your-page-handle'] %}
-
-      {% if page.metafields.global.announcement_list %}
-      <div class="swiper">
-        <div class="swiper-container">
-          <div class="swiper-wrapper">
-            {% assign announcements = page.metafields.global.announcement_list | split: '\n' %}
-            {% for announcement in announcements %}
-              <div class="swiper-slide">{{ announcement }}</div>
-            {% endfor %}
-          </div>
-        </div>
-
-      {% endif %}
-
-        <div class="swiper-button-prev">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-            <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
-          </svg>
-        </div>
-        <div class="swiper-button-next">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-            <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
-          </svg>
-        </div>
+            * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+            }
+      
+            .swiper {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              background-color: yellow;
+              padding: 16px 32px;
+            }
+      
+            .swiper-container {
+              order: 2;
+              overflow: hidden;
+              height: 50px;
+            }
+      
+            .swiper-wrapper {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              height: 100%;
+              transition: transform 0.5s ease-in-out;
+            }
+      
+            .swiper-button-next {
+              order: 3;
+            }
+      
+            .swiper-button-prev {
+              order: 1;
+            }
+      
+            .swiper-slide {
+              padding: 16px;
+              font-size: 14px;
+              font-weight: bold;
+              opacity: 0;
+              transition: opacity 1s ease-in-out;
+            }
+      
+            .swiper-button-prev,
+            .swiper-button-next {
+              width: 16px;
+              height: 16px;
+              cursor: pointer;
+            }
+      
+            .active {
+              opacity: 1;
+            }
+      
+            @media screen and (min-width: 1440px) {
+              .swiper {
+                padding: 8px 128px;
+              }
+      
+              .swiper-slide {
+                font-size: 20px;
+              }
+            }
+      
+          </style>
+      
+            {% assign page = pages['your-page-handle'] %}
+      
+            {% if page.metafields.global.announcement_list %}
+            <div class="swiper">
+              <div class="swiper-container">
+                <div class="swiper-wrapper">
+                  {% assign announcements = page.metafields.global.announcement_list | split: '\n' %}
+                  {% for announcement in announcements %}
+                    <div class="swiper-slide">{{ announcement }}</div>
+                  {% endfor %}
+                </div>
+              </div>
+      
+            {% endif %}
+      
+              <div class="swiper-button-prev">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                  <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+                </svg>
+              </div>
+              <div class="swiper-button-next">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                  <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
+                </svg>
+              </div>
   </div> {% endcomment %}
 {% comment %} <script>
-        let slideItems = document.querySelectorAll(".swiper-slide");
-        let nextArrow = document.querySelector(".swiper-button-next");
-        let prevArrow = document.querySelector(".swiper-button-prev");
-        let slide = document.querySelector(".swiper-wrapper");
-        let itemHeight = slideItems[0].clientHeight;
-        let len = slideItems.length;
-        let currentIndex = 0;
-
-        let transitionCompleted = false;
-
-        slideItems.forEach((item, index) => {
-          if (index === 0) {
-            item.classList.add("active");
-          }
-            item.setAttribute("data-index", index);
-        });
-
-        nextArrow.addEventListener("click", nextSlide);
-
-        prevArrow.addEventListener("click", prevSlide);
-
-        console.log(itemHeight)
-
-        function nextSlide() {
-            let activeItem = document.querySelector(".swiper-slide.active");
-            let currentIndex = activeItem.getAttribute("data-index");
-            let index = currentIndex < len - 1 ? Number(currentIndex) + 1 : 0;
-
-            activeItem.classList.remove("active");
-            document.querySelector(`[data-index="${index}"]`).classList.add("active");
-            slide.style.transform = `translateY(-${index * itemHeight}px)`;
-            autoScroll();
-        }
-
-        function prevSlide() {
-            let activeItem = document.querySelector(".swiper-slide.active");
-            let currentIndex = activeItem.getAttribute("data-index");
-            let index = currentIndex < len - 1 ? Number(currentIndex) + 1 : 0;
-
-            activeItem.classList.remove("active");
-            document.querySelector(`[data-index="${index}"]`).classList.add("active");
-            slide.style.transform = `translateY(-${index * itemHeight}px)`;
-            autoScroll();
-        }
-
-        let indexInterval = 0;
-        function autoScroll() {
-            clearInterval(indexInterval);
-            indexInterval = setInterval(nextSlide, 2000);
-        }
-
-        autoScroll();
-
+              let slideItems = document.querySelectorAll(".swiper-slide");
+              let nextArrow = document.querySelector(".swiper-button-next");
+              let prevArrow = document.querySelector(".swiper-button-prev");
+              let slide = document.querySelector(".swiper-wrapper");
+              let itemHeight = slideItems[0].clientHeight;
+              let len = slideItems.length;
+              let currentIndex = 0;
+      
+              let transitionCompleted = false;
+      
+              slideItems.forEach((item, index) => {
+                if (index === 0) {
+                  item.classList.add("active");
+                }
+                  item.setAttribute("data-index", index);
+              });
+      
+              nextArrow.addEventListener("click", nextSlide);
+      
+              prevArrow.addEventListener("click", prevSlide);
+      
+              console.log(itemHeight)
+      
+              function nextSlide() {
+                  let activeItem = document.querySelector(".swiper-slide.active");
+                  let currentIndex = activeItem.getAttribute("data-index");
+                  let index = currentIndex < len - 1 ? Number(currentIndex) + 1 : 0;
+      
+                  activeItem.classList.remove("active");
+                  document.querySelector(`[data-index="${index}"]`).classList.add("active");
+                  slide.style.transform = `translateY(-${index * itemHeight}px)`;
+                  autoScroll();
+              }
+      
+              function prevSlide() {
+                  let activeItem = document.querySelector(".swiper-slide.active");
+                  let currentIndex = activeItem.getAttribute("data-index");
+                  let index = currentIndex < len - 1 ? Number(currentIndex) + 1 : 0;
+      
+                  activeItem.classList.remove("active");
+                  document.querySelector(`[data-index="${index}"]`).classList.add("active");
+                  slide.style.transform = `translateY(-${index * itemHeight}px)`;
+                  autoScroll();
+              }
+      
+              let indexInterval = 0;
+              function autoScroll() {
+                  clearInterval(indexInterval);
+                  indexInterval = setInterval(nextSlide, 2000);
+              }
+      
+              autoScroll();
+      
 </script> {% endcomment %}
-
+{% comment %} 
+      Renders a header drawer menu for mobile and desktop.
+     
+      Usage:
+      {% render 'custom-button' %} 
+{% endcomment %}
 <custom-button></custom-button>
 {% schema %}
   {
