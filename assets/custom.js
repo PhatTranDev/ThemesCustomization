@@ -20,6 +20,9 @@ class Custom extends HTMLElement {
         this.display.textContent = `Current index: ${this.index}`;
         this.shadowRoot.append(this.display);
 
+        console.log(increaseButton);
+        console.log(decreaseButton);
+        
         this.increase();
         this.decrease();
     }
