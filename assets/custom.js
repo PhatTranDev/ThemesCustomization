@@ -11,24 +11,30 @@ class Custom extends HTMLElement {
         this.display.textContent = `Current index: ${this.index}`;
         this.append(this.display);
 
-        console.log(increaseButton);
-        console.log(decreaseButton);
+        this.increaseButton = this.querySelector('.increase-button');
+        this.decreaseButton = this.querySelector('.decrease-button');
+        this.index = index;
 
         this.increase();
         this.decrease();
+        
+        console.log(index);
     }
 
     increase() {
-        this.querySelector('.increase-button').addEventListener('click', () => {
+        this.increaseButton.addEventListener('click', () => {
             this.index++;
             this.display.textContent = `Current index: ${this.index}`;
+            console.log("Increase ",this.index);
+
         });
     }
 
     decrease() {
-        this.querySelector('.decrease-button').addEventListener('click', () => {
+        this.decreaseButton.addEventListener('click', () => {
             this.index--;
             this.display.textContent = `Current index: ${this.index}`;
+            console.log("Decrease ",this.index);
         });
     }
 }
