@@ -4,8 +4,6 @@ class Custom extends HTMLElement {
     constructor() {
         super();
         
-        this.attachShadow({mode: 'open'});
-
         this.setAttribute('custom-button-group', 'custom-button');
         
         const increaseButton = document.createElement('button');
@@ -16,7 +14,7 @@ class Custom extends HTMLElement {
         decreaseButton.classList.add('decrease-button');
         decreaseButton.textContent = 'Decrease';
 
-        this.shadowRoot.append(increaseButton, decreaseButton);
+        this.append(increaseButton, decreaseButton);
 
         this.display = document.createElement('p');
         this.display.textContent = `Current index: ${this.index}`;
@@ -27,14 +25,14 @@ class Custom extends HTMLElement {
     }
 
     increase() {
-        this.shadowRoot.querySelector('.increase-button').addEventListener('click', () => {
+        this.querySelector('.increase-button').addEventListener('click', () => {
             this.index++;
             this.display.textContent = `Current index: ${this.index}`;
         });
     }
 
     decrease() {
-        this.shadowRoot.querySelector('.decrease-button').addEventListener('click', () => {
+        this.querySelector('.decrease-button').addEventListener('click', () => {
             this.index--;
             this.display.textContent = `Current index: ${this.index}`;
         });
