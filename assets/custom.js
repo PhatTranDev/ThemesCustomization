@@ -1,41 +1,39 @@
-class QuantitySelector extends HTMLElement {
+class Custom extends HTMLElement {
+    index = 0;
+
     constructor() {
-      super();
-      this.quantity = 0;
-      this.attachShadow({ mode: 'open' });
-      this.render();
+        super();
+        
+        this.setAttribute('custom-button-group', 'custom-button');
+        this.append(increaseButton, decreaseButton);
+
+        this.display = document.createElement('p');
+        this.display.textContent = `Current index: ${this.index}`;
+        this.append(this.display);
+
+        this.increaseButton = this.querySelector('.increase-button');
+        this.decreaseButton = this.querySelector('.decrease-button');
+        
+        this.increase();
+        this.decrease();
+        
+        console.log(index);
     }
-  
-    render() {
-      const template = this.appendChild(
-        `
-        <style>
-          button {
-            padding: 5px 10px;
-            margin: 0 5px;
-          }
-        </style>
-        <button id="decrease">-</button>
-        <p id="quantity">0</p>
-        <button id="increase">+</button>`);
-      this.shadowRoot.appendChild(template.content.cloneNode(true));
-  
-      const decreaseBtn = this.shadowRoot.querySelector('#decrease');
-      const increaseBtn = this.shadowRoot.querySelector('#increase');
-      const quantityElement = this.shadowRoot.querySelector('#quantity');
-  
-      decreaseBtn.addEventListener('click', () => {
-        if (this.quantity > 0) {
-          this.quantity--;
-          quantityElement.textContent = this.quantity;
-        }
-      });
-  
-      increaseBtn.addEventListener('click', () => {
-        this.quantity++;
-        quantityElement.textContent = this.quantity;
-      });
+
+    increase() {
+        this.increaseButton.addEventListener('click', () => {
+            this.index++;
+            this.display.textContent = `Current index: ${this.index}`;
+        });
     }
-  }
-  
-  customElements.define('quantity-selector', QuantitySelector);
+
+    decrease() {
+        this.decreaseButton.addEventListener('click', () => {
+            this.index--;
+            this.display.textContent = `Current index: ${this.index}`;
+            console.log("Decrease ",this.index);
+        });
+    }
+}
+
+customElements.define('custom-button', Custom);
