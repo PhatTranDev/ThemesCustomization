@@ -7,7 +7,7 @@ class QuantitySelector extends HTMLElement {
     }
   
     render() {
-      const template = document.createElement('template');
+      const template = this.createElement('template');
       template.innerHTML = `
         <style>
           button {
