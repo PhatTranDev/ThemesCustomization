@@ -5,24 +5,15 @@ class Custom extends HTMLElement {
         super();
         
         this.setAttribute('custom-button-group', 'custom-button');
-        
-        const increaseButton = document.createElement('button');
-        increaseButton.classList.add('increase-button');
-        increaseButton.textContent = 'Increase';
-
-        const decreaseButton = document.createElement('button');
-        decreaseButton.classList.add('decrease-button');
-        decreaseButton.textContent = 'Decrease';
-
         this.append(increaseButton, decreaseButton);
 
         this.display = document.createElement('p');
         this.display.textContent = `Current index: ${this.index}`;
-        this.shadowRoot.append(this.display);
+        this.append(this.display);
 
         console.log(increaseButton);
         console.log(decreaseButton);
-        
+
         this.increase();
         this.decrease();
     }
