@@ -10,6 +10,8 @@ class CartNotification extends HTMLElement {
     this.querySelectorAll('button[type="button"]').forEach((closeButton) =>
       closeButton.addEventListener('click', this.close.bind(this))
     );
+
+    this.append("<button>Increase</button>");
   }
 
   open() {
