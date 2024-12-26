@@ -7,8 +7,8 @@ class QuantitySelector extends HTMLElement {
     }
   
     render() {
-      const template = this.createElement('template');
-      template.innerHTML = `
+      const template = this.appendChild(
+        `
         <style>
           button {
             padding: 5px 10px;
@@ -17,8 +17,7 @@ class QuantitySelector extends HTMLElement {
         </style>
         <button id="decrease">-</button>
         <p id="quantity">0</p>
-        <button id="increase">+</button>
-      `;
+        <button id="increase">+</button>`);
       this.shadowRoot.appendChild(template.content.cloneNode(true));
   
       const decreaseBtn = this.shadowRoot.querySelector('#decrease');
